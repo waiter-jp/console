@@ -1,0 +1,19 @@
+<nb-card>
+    <nb-card-header>
+        <span>許可証発行テスター</span>
+        <div class="input-group">
+            <input #issueingInterval (blur)="updateIssueingInterval(issueingInterval.value)" type="text" class="form-control" placeholder="リクエスト間隔(ミリ秒)で発行">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-success btn-icon" (click)="startTest();">
+                    <i class="nb-play"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-icon" (click)="stopTest();">
+                    <i class="nb-pause"></i>
+                </button>
+            </span>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <chart type="line" [data]="data" [options]="options"></chart>
+    </nb-card-body>
+</nb-card>
